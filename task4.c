@@ -4,15 +4,16 @@ int main()
 {
     int num1 = 10;
     int num2 = 20;
-    int* ptr;
+    int swap = 0;
+    int* ptr = &swap;
+    
+    printf("before %d %d\n", num1, num2);
 
-    printf("before %d %d\n", num1, num2); // 10 20
-
-    ptr = &num1;
+    *ptr = num1;
     num1 = num2;
     num2 = *ptr;
 
-    printf("after %d %d\n", num1, num2); // 20 20
+    printf("after %d %d\n", num1, num2);
 
     return 0;
 }
